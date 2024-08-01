@@ -6,46 +6,53 @@
     <title>Feedback Survey Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #e9ecef;
             color: #333;
         }
         .container {
-            width: 50%;
-            margin: 40px auto;
+            width: 40%;
+            margin: 50px auto;
             padding: 30px;
             background: #ffffff;
             border-radius: 12px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #495057;
         }
         h1 {
-            text-align: center;
-            color: #4a90e2;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #17a2b8;
         }
         h2 {
-            text-align: center;
-            color: #f56a79;
+            font-size: 1.5em;
+            color: #6c757d;
         }
         form {
             display: flex;
             flex-direction: column;
         }
         label {
-            margin-top: 10px;
+            margin-top: 15px;
             font-weight: bold;
-            color: #4a4a4a;
+            color: #343a40;
         }
         input, select, textarea {
-            margin-top: 5px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
+            margin-top: 8px;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
             width: 100%;
             box-sizing: border-box;
-            font-size: 16px;
+            font-size: 1em;
+            color: #495057;
         }
         input[type="radio"], input[type="checkbox"] {
             width: auto;
@@ -66,36 +73,52 @@
             margin-right: 0;
         }
         button {
-            margin-top: 20px;
+            margin-top: 25px;
             padding: 15px;
             border: none;
             border-radius: 8px;
-            background: #28a745;
+            background: #17a2b8;
             color: #fff;
-            font-size: 18px;
+            font-size: 1.2em;
             cursor: pointer;
             transition: background 0.3s ease;
         }
         button:hover {
-            background: #218838;
+            background: #138496;
+        }
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(23, 162, 184, 0.4);
         }
         footer {
-            margin-top: 20px;
+            margin-top: 30px;
             text-align: center;
-            color: #777;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Feedback Survey</h1>
-        <h2>We Value Your Feedback!</h2>
+        <h2>We Value Your Feedback</h2>
         <form action="/submit-feedback" method="POST">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
 
             <label>Rate our service:</label>
             <div class="rating-group">
@@ -110,7 +133,7 @@
             </div>
 
             <label for="improvement">What can we improve?</label>
-            <textarea id="improvement" name="improvement" rows="4"></textarea>
+            <textarea id="improvement" name="improvement" rows="4" placeholder="Your suggestions"></textarea>
 
             <label>Would you recommend us to others?</label>
             <div class="recommend-group">
@@ -118,7 +141,7 @@
                 <label for="recommend">Yes</label>
             </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit">Submit Feedback</button>
         </form>
     </div>
     <footer>
